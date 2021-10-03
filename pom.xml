@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.alpha</groupId>
+	<artifactId>springwebmvcmaven-lovecalculator</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springwebmvcmaven-lovecalculator Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- create spring web MVC maven project by default there is web.xml file 
+		Since we are going work on java based configuration we don't need web.xml 
+		so i can delete that if i delete that then there will be an error says web.xml 
+		is missing and <failOnMissingWebXml> is set to true pom.xml we have to set 
+		that property as false -->
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<!-- Because this tag JRE system Library changes to 1.5 so we to set back using below tags 
+		After this stil we will see some other 2 errors so before fix that 
+			see under Libraries > JRE System Library says J2SE-1.5 we should change it 
+			to 1.8 below code is for that and also above 2 errors also fixed go to browser 
+			search 'Java 8 maven compiler plugin' > click Apache Maven project website 
+			and copy -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- After still facing issue desc like 'Cannot change version of project 
+			facet Dynamic Web Module to 4.0.' to fix Project> show In > System Explorer 
+			> project folder > .settings> Edit org.eclipse.wst.common.project.facet.core 
+			change jst.web version 2.3 to 4.0 which mentioned in error desc project > 
+			maven > update project Remove project in tomcat server project > run as > 
+			maven install check build success project > run as> Run on server -->
+
+	</properties>
+
+
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.2.2.RELEASE</version>
+		</dependency>
+ 
+		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+<!-- Bean Validation  -->
+<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+    <version>2.0.1.Final</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>6.1.0.Final</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4.7</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context-support</artifactId>
+    <version>5.3.9</version>
+</dependency>
+
+
+	</dependencies>
+	<build>
+		<finalName>springwebmvcmaven-lovecalculator</finalName>
+	</build>
+</project>
